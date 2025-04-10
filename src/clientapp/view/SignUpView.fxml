@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<SplitPane fx:id="splitPane" dividerPositions="0.11654135338345864" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" stylesheets="@../../resources/styles.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="clientapp.controller.SignUpViewController">
+    <items>
+        <AnchorPane fx:id="anchorPaneL" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+            <children>
+                <Button fx:id="returnButton" cancelButton="true" layoutX="20.0" layoutY="35.0" minWidth="34.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="62.0" styleClass="minimal-button" />
+                <ImageView fx:id="backButtonImg" disable="true" fitHeight="32.0" fitWidth="55.0" layoutX="35.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true" styleClass="btnShowPasswd">
+                    <image>
+                        <Image url="@../../resources/Flecha.png" />
+                    </image>
+                </ImageView>
+            </children>
+        </AnchorPane>
+        <AnchorPane fx:id="anchorPaneR" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+            <children>
+                <Button layoutX="504.0" layoutY="24.0" mnemonicParsing="false">
+                    <graphic>
+                        <ImageView fitHeight="23.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../resources/interrogation.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                
+                <Label fx:id="emailLabel" layoutX="18.0" layoutY="173.0" prefHeight="18.0" prefWidth="68.0" text="Email: " />
+                <Label fx:id="usernameLabel" layoutX="20.0" layoutY="251.0" prefHeight="18.0" prefWidth="202.0" text="Full Name:" />
+                <Label fx:id="streetLabel" layoutX="401.0" layoutY="227.0" prefHeight="18.0" prefWidth="68.0" text="Street:" />
+                <Label fx:id="passwordLabel" layoutX="19.0" layoutY="333.0" prefHeight="18.0" prefWidth="202.0" text="Password: " />
+                <Label fx:id="repeatPasswdLabel" layoutX="19.0" layoutY="412.0" prefHeight="18.0" prefWidth="202.0" text="Repeat password: " />
+                <Label fx:id="cityLabel" layoutX="405.0" layoutY="305.0" prefHeight="18.0" prefWidth="68.0" text="City:" />
+                <Label fx:id="zipLabel" layoutX="402.0" layoutY="388.0" prefHeight="18.0" prefWidth="68.0" text="Zip:" />
+            
+                <TextField fx:id="emailTxf" layoutX="20.0" layoutY="209.0" prefHeight="26.0" prefWidth="201.0" promptText="enter your email" />
+                <TextField fx:id="fullNameTxf" layoutX="21.0" layoutY="285.0" prefHeight="26.0" prefWidth="201.0" promptText="enter your full name" />
+                <PasswordField fx:id="passwordPwdf" layoutX="22.0" layoutY="368.0" prefHeight="26.0" prefWidth="202.0" />
+                <TextField fx:id="passwordTxf" layoutX="22.0" layoutY="368.0" prefHeight="26.0" prefWidth="202.0" promptText="enter your password" />
+                <PasswordField fx:id="repeatPasswordPwdf" layoutX="18.0" layoutY="446.0" prefHeight="26.0" prefWidth="201.0" />
+                <TextField fx:id="retryPasswordTxf" layoutX="18.0" layoutY="446.0" prefHeight="26.0" prefWidth="210.0" promptText="repeat your password" />
+                
+                <Button fx:id="btnShowPasswd" layoutX="227.0" layoutY="365.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="44.0" styleClass="btnShowPasswd">
+                    <graphic>
+                        <ImageView fx:id="buttonImgView" fitHeight="24.0" fitWidth="28.0" pickOnBounds="true" />
+                    </graphic>
+                </Button>
+                <TextField fx:id="streetTxf" layoutX="404.0" layoutY="260.0" prefHeight="26.0" prefWidth="201.0" promptText="enter your street" />
+                
+                <TextField fx:id="cityTxf" layoutX="404.0" layoutY="338.0" prefHeight="26.0" prefWidth="201.0" promptText="enter your city" />
+                <TextField fx:id="zipTxf" layoutX="404.0" layoutY="430.0" prefHeight="26.0" prefWidth="201.0" promptText="enter your zip" />
+                
+                <CheckBox fx:id="checkActive" layoutX="23.0" layoutY="507.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="94.0" selected="true" text="Active">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </CheckBox>
+                
+                <Button fx:id="singUpButton" defaultButton="true" layoutX="482.0" layoutY="502.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="45.0" prefWidth="103.0" styleClass="minimal-button" text="SignUp" />
+                
+                <Line fx:id="emailLine" endX="100.0" layoutX="119.0" layoutY="235.0" startX="-100.0" />
+                <Line fx:id="fullNameLine" endX="100.0" layoutX="122.0" layoutY="311.0" startX="-100.0" />
+                <Line fx:id="passwordLine" endX="100.0" layoutX="123.0" layoutY="394.0" startX="-100.0" />
+                <Line fx:id="repeatPasswordlLine" endX="100.0" layoutX="118.0" layoutY="472.0" startX="-100.0" />
+                <Line fx:id="streetLine" endX="100.0" layoutX="505.0" layoutY="286.0" startX="-100.0" />
+                <Line fx:id="cityLine" endX="100.0" layoutX="504.0" layoutY="364.0" startX="-100.0" />
+                <Line fx:id="zipLine" endX="100.0" layoutX="505.0" layoutY="456.0" startX="-100.0" />
+            
+            </children>
+        </AnchorPane>
+    </items>
+</SplitPane>
