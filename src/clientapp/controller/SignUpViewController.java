@@ -110,7 +110,7 @@ public class SignUpViewController {
      * Button to show password
      */
     @FXML
-    private Button btnShowPasswd = new Button();
+    private Button buttonEye = new Button();
 
     /**
      * Button to show password in retry password
@@ -210,7 +210,8 @@ public class SignUpViewController {
         //set window's events handlers
         stage.setOnShowing(this::handleWindowShowing);
         stage.setOnCloseRequest(this::onCloseRequest);
-        btnShowPasswd.setOnAction(this::showPassword);
+        buttonEye.setOnAction(this::showPassword);
+        retryButtonEye.setOnAction(this::retryShowPassword);
         itemResetFields.setOnAction(this::resetFields);
         itemBack.setOnAction(this::backButtonAction);
         root.setOnContextMenuRequested(this::manejarContextMenu);
@@ -246,10 +247,7 @@ public class SignUpViewController {
         retryPasswordTxf.textProperty().bindBidirectional(repeatPasswordPwdf.textProperty());
         //put the images in the imageviews
         buttonImgView.setImage(new Image(getClass().getResourceAsStream("/resources/SinVerContraseña.png")));
-        btnShowPasswd.setOnAction(this::showPassword);
-        
-        returnButton.setOnAction(this::backButtonAction);
-        
+//        repeatbuttonImgView.setImage(new Image(getClass().getResourceAsStream("/resources/SinVerContraseña.png")));
         //Context menu
         contextMenu.getItems().addAll(itemResetFields, itemBack);
         signable = SignableFactory.getSignable();
@@ -399,10 +397,6 @@ public class SignUpViewController {
             passwordPwdf.setManaged(false);
             passwordTxf.setVisible(true);
             passwordTxf.setManaged(true);
-            repeatPasswordPwdf.setVisible(false);
-            repeatPasswordPwdf.setManaged(false);
-            retryPasswordTxf.setVisible(true);
-            retryPasswordTxf.setManaged(true);
             passwordVisible = true;
         } else {
             buttonImgView.setImage(new Image(getClass().getResourceAsStream("/resources/SinVerContraseña.png")));
@@ -410,11 +404,30 @@ public class SignUpViewController {
             passwordTxf.setManaged(false);
             passwordPwdf.setVisible(true);
             passwordPwdf.setManaged(true);
+            passwordVisible = false;
+        }
+    }
+
+    /**
+     * Method to change the visibility of the retryPassword
+     *
+     * @param event triggers an action, in this case a button click
+     */
+    public void retryShowPassword(ActionEvent event) {
+        if (!repeatpasswordVisible) {
+            repeatbuttonImgView.setImage(new Image(getClass().getResourceAsStream("/resources/ViendoContraseña.png")));
+            repeatPasswordPwdf.setVisible(false);
+            repeatPasswordPwdf.setManaged(false);
+            retryPasswordTxf.setVisible(true);
+            retryPasswordTxf.setManaged(true);
+            repeatpasswordVisible = true;
+        } else {
+            repeatbuttonImgView.setImage(new Image(getClass().getResourceAsStream("/resources/SinVerContraseña.png")));
             retryPasswordTxf.setVisible(false);
             retryPasswordTxf.setManaged(false);
             repeatPasswordPwdf.setVisible(true);
             repeatPasswordPwdf.setManaged(true);
-            passwordVisible = false;
+            repeatpasswordVisible = false;
         }
     }
 

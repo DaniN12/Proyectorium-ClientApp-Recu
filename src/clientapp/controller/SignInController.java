@@ -59,7 +59,7 @@ public class SignInController {
     private PasswordField PasswordField;
 
     @FXML
-    private Button btnShowPasswd = new Button();
+    private Button btnShowPassword = new Button();
 
     @FXML
     private Button btnSignIn = new Button();
@@ -81,6 +81,10 @@ public class SignInController {
 
     @FXML
     private TextField usernameField;
+
+    @FXML
+
+    private PasswordField passwordField;
 
     @FXML
     private Label errorLabel;
@@ -115,8 +119,6 @@ public class SignInController {
 
         signable = SignableFactory.getSignable();
 
-        btnShowPasswd.setOnAction(this::showPassword);
-        
         stage.show();
     }
 
@@ -137,27 +139,21 @@ public class SignInController {
         credentials.setPassword(password);
 
         try {
+            if (email.isEmpty() || password.isEmpty() || txtFieldPassword.getText().isEmpty()) {
+                throw new EmptyFieldException("Fields are empty, all fields need to be filled");
+            }
 
-            if (txtFieldEmail.getText().equals("admin") && PasswordField.getText().equals("admin")) {
-                openAdminWindow(event, new UserEntity());
-            } else if (txtFieldEmail.getText().equals("customer") && PasswordField.getText().equals("customer")) {
-                openMainWindow(event, new UserEntity());
+            if (!email.matches("^[A-Za-z0-9._%+-]+@gmail\\.com$")) {
+                throw new IncorrectPatternException("The email is not well written or is incorrect");
+            }
+
+            UserEntity signedInUser = signable.signIn(credentials, new GenericType<UserEntity>() {
+            });
+
+            if (signedInUser.getUserType() != UserType.ADMIN) {
+                openMainWindow(event, signedInUser);
             } else {
-                if (email.isEmpty() || password.isEmpty() || txtFieldPassword.getText().isEmpty()) {
-                    throw new EmptyFieldException("Fields are empty, all fields need to be filled");
-                }
-
-                if (!email.matches("^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.com$")) {
-                    throw new IncorrectPatternException("The email is not well written or is incorrect");
-                }
-                UserEntity signedInUser = signable.signIn(credentials, new GenericType<UserEntity>() {
-                });
-
-                if (signedInUser.getUserType() != UserType.ADMIN) {
-                    openMainWindow(event, signedInUser);
-                } else {
-                    openAdminWindow(event, signedInUser);
-                }
+                openAdminWindow(event, signedInUser);
             }
 
         } catch (EmptyFieldException ex) {
@@ -198,7 +194,7 @@ public class SignInController {
             }
             controller.setStage(stage);
             //Initializes the controller with the loaded view
-            controller.initialize(root, user);
+            controller.initialize(root/*, user*/);
 
         } catch (IOException ex) {
             // Logs the error and displays an alert messsage

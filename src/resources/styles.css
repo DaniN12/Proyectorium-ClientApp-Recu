@@ -1,7 +1,4 @@
-@font-face {
-    font-family: 'Cheri';
-    src: url('/resources/CHERI___.TTF'); /* Ajusta esta ruta si es necesario */
-}
+
 
 /* Aplicar la fuente Cheri a los Labels específicos */
 #lblEmail, #lblPassword, #lblError, #emailLabel, #usernameLabel, #streetLabel, #passwordLabel, #repeatPasswdLabel, #cityLabel, #zipLabel, #userNameLbl, #emailLbl, #streetLbl, #cityLbl, #zipLbl {
@@ -33,7 +30,7 @@
 }
 
 /* Estilo minimalista para el botón de inicio de sesión */
-.minimal-button, #btnSignIn {
+.minimal-button {
     -fx-background-color: #34dede; /* Fondo transparente */
     -fx-border-color: black; /* Borde negro minimalista */
     -fx-font-weight: bold;
@@ -110,10 +107,7 @@
     -fx-background-repeat: no-repeat; /* No repetir la imagen */
 }
 
-@font-face {
-    font-family: 'Cheri';
-    src: url('/resources/CHERI___.TTF'); /* Ajusta esta ruta si es necesario */
-}
+
 
 /* Aplicar la fuente Cheri y estilos a Labels específicos en infoView */
 #infoViewpanel #lblEmail, #infoViewpanel #lblPassword, #infoViewpanel #lblError,
@@ -147,28 +141,4 @@
 
 #infoViewpanel #usernameLabel {
     -fx-min-width: 150px; /* Ajusta el valor según sea necesario */
-}
-
-
-#btnInterrogation {
-    -fx-background-color: #34dede;
-    -fx-text-fill: black;
-    -fx-font-size: 14px;
-    -fx-font-weight: bold;
-    -fx-background-radius: 20px;
-    -fx-border-radius: 20px;
-    -fx-border-color: transparent;
-    -fx-border-width: 0;
-    -fx-padding: 5px 10px;
-    -fx-cursor: hand;
-    -fx-transition: background-color 0.3s ease;
-}
-
-#btnInterrogation:hover {
-    -fx-background-color: #D8BFD8; 
-    -fx-text-fill: white;
-}
-
-#btnInterrogation:pressed {
-    -fx-background-color: #BA55D3; 
 }

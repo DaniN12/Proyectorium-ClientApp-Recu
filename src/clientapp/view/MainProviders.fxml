@@ -33,33 +33,29 @@
             </items>
         </MenuButton>
         
-        <TableView fx:id="tableProviders" layoutX="103.0" layoutY="174.0" prefHeight="450.0" prefWidth="1200.0">
+        <TableView fx:id="tableProviders" layoutX="54.0" layoutY="174.0" prefHeight="450.0" prefWidth="1270.0">
             <columns>
                 <TableColumn fx:id="tbcolumnName" prefWidth="154.4000015258789" text="Name" />
                 <TableColumn fx:id="tbcolumnEmail" prefWidth="171.19998168945312" text="Email" />
                 <TableColumn fx:id="tbcolumnPhone" prefWidth="118.39993286132812" text="Phone" />
-                <TableColumn fx:id="tbcolumnConInit" prefWidth="281.5999755859375" text="Contract Init" />
-                <TableColumn fx:id="tbcolumnConEnd" prefWidth="276.0" text="Contract End" />
-                <TableColumn fx:id="tbcolumnPrice" prefWidth="203.99993896484375" text="Price" />
+                <TableColumn fx:id="tbcolumnConInit" prefWidth="270.0" text="Contract Init" />
+                <TableColumn fx:id="tbcolumnConEnd" prefWidth="259.0" text="Contract End" />
+                <TableColumn fx:id="tbcolumnPrice" prefWidth="134.0" text="Price" />
+                <TableColumn fx:id="tbcolumnMovies" prefWidth="149.0" text="Movies" />
             </columns>
             <contextMenu>
                 <ContextMenu>
                     <items>
                         <MenuItem mnemonicParsing="false" text="Add Provider" />
                         <MenuItem mnemonicParsing="false" text="Remove Provider" />
-                        <MenuItem mnemonicParsing="false" text="Print" onAction="#handleRemoveAction"/>
+                        <MenuItem mnemonicParsing="false" onAction="#handleRemoveAction" text="Print" />
                     </items>
                 </ContextMenu>
             </contextMenu>
-            
-            
-            
         </TableView>
 
         <Button fx:id="btnAddProvider" layoutX="682.0" layoutY="673.0" mnemonicParsing="false" onAction="#handleCreateAction" prefHeight="35.0" prefWidth="200.0" text="Add Provider" />
         <Button fx:id="btnRemoveProvider" layoutX="955.0" layoutY="673.0" mnemonicParsing="false" onAction="#handleRemoveAction" prefHeight="35.0" prefWidth="200.0" text="Remove Provider" />
         <Button fx:id="btnPrint" layoutX="409.0" layoutY="673.0" mnemonicParsing="false" onAction="#handleImprimirAction" prefHeight="35.0" prefWidth="200.0" text="Print" />
-
-        
     </children>
 </AnchorPane>

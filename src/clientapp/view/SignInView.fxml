@@ -11,12 +11,12 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Line?>
 
-<SplitPane fx:id="signInpane" dividerPositions="0.29797979797979796" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" stylesheets="@../../resources/stylesEntities.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="clientapp.controller.SignInController">
+<SplitPane fx:id="signInpane" dividerPositions="0.29797979797979796" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" stylesheets="@../../resources/styles.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="clientapp.controller.SignInController">
     <items>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" />
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
             <children>
-                <Button layoutX="350.0" layoutY="33.0" mnemonicParsing="false">
+                <Button layoutX="380.0" layoutY="33.0" mnemonicParsing="false">
                     <graphic>
                         <ImageView fx:id="btnInterrogation" fitHeight="23.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                             <image>
@@ -46,7 +46,7 @@
                 
                 <Button fx:id="btnSignIn" layoutX="108.0" layoutY="373.0" mnemonicParsing="false" onAction="#handleSignIn" prefHeight="47.0" prefWidth="102.0" styleClass="minimal-button" text="Sign In" />
                 
-                <Hyperlink fx:id="HyperLinkRegistered" layoutX="25.0" layoutY="420.0" text="You are not Registered yet? Click here!" />
+                <Hyperlink fx:id="HyperLinkRegistered" layoutX="55.0" layoutY="420.0" text="You are not Registered yet? Click here!" />
                 
             
                 
